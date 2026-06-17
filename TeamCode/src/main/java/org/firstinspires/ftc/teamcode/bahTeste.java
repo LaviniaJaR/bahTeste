@@ -20,7 +20,7 @@ public class bahTeste extends OpMode {
     @Override
     public void loop() {
 
-        if (gamepad1.left_trigger > 0.5 ) {
+        if (gamepad1.a) {
             intake.setPower(1);
         } else {
             intake.setPower(0);
