@@ -7,19 +7,23 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 @TeleOp(name = "Teste")
 public class bahTeste extends OpMode {
 
-    private DcMotor motor;
+    private DcMotor intake;
 
     @Override
     public void init() {
 
-        motor = hardwareMap.get(DcMotor.class, "backLeft");
+        intake = hardwareMap.get(DcMotor.class, "intake");
+
 
     }
 
     @Override
     public void loop() {
 
-        motor.setPower(1);
-
+        if (gamepad1.left_trigger > 0.5 ) {
+            intake.setPower(1);
+        } else {
+            intake.setPower(0);
+        }
     }
 }
